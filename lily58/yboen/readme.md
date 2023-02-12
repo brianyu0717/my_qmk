@@ -6,8 +6,21 @@ Goal is to make it work for 34 keys so eventually could easily transition to _en
 
 # Features
 
-* Home row mods
-* Macro to enter my email address
+## Home row mods
+
+```
+ |------+------+------+------+------+------|     |------+------+------+------+------+------|
+ |      |   A  |   S  |   D  |   F  |   G  |     |   H  |   J  |   K  |   L  |   ;  |      |
+ |      | Lgui | Lalt | Lctl | LSft |      |     |      | Lsft | LCtrl| LAlt | LGui |      |
+ |------+------+------+------+------+------|     |------+------+------+------+------+------|
+```
+
+## Combos 
+
+* "ERM" for personal email
+* "WEM" for work email
+* "QWE" for qwerty layer as default
+* "WER" for gaming layer as default
 
 # Default layer
 
@@ -54,7 +67,7 @@ Goal is to make it work for 34 keys so eventually could easily transition to _en
  |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  |      | Caps | Home | End  | PgUp |      |-------.    ,-------| Left | Down |  Up  | Right| Bksp |      |
  |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- |      | LGUI | LAlt | LCtrl| PgDn |      |-------|    |-------|      | Enter| Tab  | Ins  | Del  |      |
+ |      | LGUI | LAlt | LCtrl| PgDn |      |-------|    |-------|  Esc | Enter| Tab  | Ins  | Del  |      |
  `-----------------------------------------/       /     \      \-----------------------------------------'
                    |      |      |nav   | /shift  /       \space \  |sym   |      |      |
                    |      |      |      |/       /         \      \ |      |      |      |
@@ -69,9 +82,9 @@ Goal is to make it work for 34 keys so eventually could easily transition to _en
  |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  |  F10 |      |
  |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- |      |      |      | CG_L | CG_R |      |-------.    ,-------| VolUp|  Esc |      |  F11 |  F12 |      |
+ |      |      |      | CG_L | CG_R |      |-------.    ,-------|      | VolUp| Mute |  F11 |  F12 |      |
  |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- |      | Undo | Cut  | Copy | Paste|      |-------|    |-------| VolDn| Mute |  Fwd | Play | Back |      |
+ |      | Undo | Cut  | Copy | Paste|      |-------|    |-------|      | VolDn|  Fwd | Play | Back |      |
  `-----------------------------------------/       /     \      \-----------------------------------------'
                    |      |      |nav   | /shift  /       \space \  |sym   |      |      |
                    |      |      |      |/       /         \      \ |      |      |      |
