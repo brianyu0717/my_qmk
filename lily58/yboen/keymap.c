@@ -23,7 +23,7 @@ enum layer_number {
   _SYM,
   _NAV,
   _FN,
-  // _GAMING
+  _GAMING
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -54,14 +54,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, CGL,     CGR,     _______,                   _______, KC_VOLU, KC_MUTE, KC_F11,  KC_F12,  _______,
   _______, UND,     CUT,     CPY,     PST,     _______, _______, _______, _______, KC_VOLD, KC_MPRV, KC_MPLY, KC_MNXT, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______  
+  ),
+  [_GAMING] = LAYOUT(
+  KC_ESC , KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+  KC_TAB , KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL ,
+  KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______,
+  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+                             _______, _______, KC_SPC,  MO_FN,   _______, _______, _______,  _______ 
   )
-  // [_GAMING] = LAYOUT(
-  // KC_ESC , KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-  // KC_TAB , KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL ,
-  // KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______,
-  // KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-  //                            _______, _______, KC_SPC,  MO_FN,   _______, _______, _______,  _______ 
-  // )
 };
 
 // combos
@@ -69,20 +69,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 enum combo_events {
     PEM_EMAIL,
     WEM_EMAIL,
-    // DF_GAMING,
-    // DF_QWERTY,
+    DF_GAMING,
+    DF_QWERTY,
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM pem_email_combo[] = {KC_E, KC_R, KC_M, COMBO_END};
 const uint16_t PROGMEM wem_email_combo[] = {KC_W, KC_E, KC_M, COMBO_END};
-// const uint16_t PROGMEM df_gaming_combo[] = {KC_W, KC_E, KC_R, COMBO_END};
-// const uint16_t PROGMEM df_qwerty_combo[] = {KC_Q, KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM df_gaming_combo[] = {KC_W, KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM df_qwerty_combo[] = {KC_Q, KC_W, KC_E, COMBO_END};
 combo_t key_combos[] = {
     [PEM_EMAIL] = COMBO_ACTION(pem_email_combo),
-    [WEM_EMAIL] = COMBO_ACTION(wem_email_combo)
-    // [DF_GAMING] = COMBO_ACTION(df_gaming_combo),
-    // [DF_QWERTY] = COMBO_ACTION(df_qwerty_combo)
+    [WEM_EMAIL] = COMBO_ACTION(wem_email_combo),
+    [DF_GAMING] = COMBO_ACTION(df_gaming_combo),
+    [DF_QWERTY] = COMBO_ACTION(df_qwerty_combo)
 };
 void process_combo_event(uint16_t combo_index, bool pressed) {
     switch (combo_index) {
@@ -96,28 +96,24 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 SEND_STRING("brian.yu@troweprice.com");
             }
             break;
-        // case DF_GAMING:
-        //     if (pressed) {
-        //       if(layer_state_is(_QWERTY)) {
-        //         layer_move(_GAMING);
-        //       } else {
-        //         layer_clear();
-        //       }
-        //     }
-        //     break;
-        // case DF_QWERTY:
-        //     if (pressed) {
-        //       if(layer_state_is(_GAMING)) {
-        //         layer_move(_QWERTY);
-        //       } else {
-        //         layer_clear();
-        //       }
-        //     }
-        //     break;
+        case DF_GAMING:
+            if (pressed) {
+              if(layer_state_is(_QWERTY)) {
+                layer_move(_GAMING);
+              } else {
+                layer_clear();
+              }
+            }
+            break;
+        case DF_QWERTY:
+            if (pressed) {
+              if(layer_state_is(_GAMING)) {
+                layer_move(_QWERTY);
+              } else {
+                layer_clear();
+              }
+            }
+            break;
     }
 }
 #endif
-
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//   return update_tri_layer_state(state, _SYM, _NAV, _FN);
-// }
