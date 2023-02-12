@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_SYM] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-  _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, _______,                   _______, _______, _______, _______, _______, _______,
+  _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, _______,                   _______, KC_TILD, KC_CIRC, _______, KC_DQUO, _______,
   _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV ,                   KC_PLUS, KC_MINS, KC_ASTR, KC_PERC, KC_QUOT, _______,
-  _______, _______, KC_CIRC, KC_LBRC, KC_RBRC, _______, _______, _______, KC_AMPR, KC_EQL,  _______, KC_BSLS, _______, _______,
+  _______, _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______, KC_AMPR, KC_EQL,  KC_UNDS, KC_BSLS, KC_PIPE, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______  
   ),
   [_NAV] = LAYOUT(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB , KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL ,
   KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-                             _______, _______, KC_SPC,  MO_FN,   _______, _______, _______,  _______ 
+                             _______, _______, KC_SPC,  MO_FN,   _______, KC_SPC , _______,  _______ 
   )
 };
 
