@@ -32,20 +32,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    _______,
   _______, K_A,     K_S,     K_D,     K_F,     KC_G,                      KC_H,    K_J,     K_K,     K_L,     K_SCLN,  _______,
   _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-                             _______, _______, MO_SYM,  KC_LSFT, KC_SPC,  MO_NAV, _______,  _______ 
+                             _______, _______, MO_SYM,  MO_FN  , KC_SPC,  MO_NAV, _______,  _______ 
   ),
   [_SYM] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
   _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, _______,                   _______, _______, _______, _______, _______, _______,
   _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV ,                   KC_PLUS, KC_MINS, KC_ASTR, KC_PERC, KC_QUOT, _______,
-  _______, _______, KC_CIRC, KC_LBRC, KC_RBRC, MO_FN  , _______, _______, KC_AMPR, KC_EQL,  _______, KC_BSLS, _______, _______,
+  _______, _______, KC_CIRC, KC_LBRC, KC_RBRC, _______, _______, _______, KC_AMPR, KC_EQL,  _______, KC_BSLS, _______, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______  
   ),
   [_NAV] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
   _______, KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
   _______, KC_CAPS, KC_HOME, KC_END,  KC_PGUP, _______,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC, _______,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_PGDN, MO_FN  , _______, _______, KC_ESC , KC_ENT,  KC_TAB,  KC_INS,  KC_DEL,  _______,
+  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_PGDN, _______, _______, _______, KC_ESC , KC_ENT,  KC_TAB,  KC_INS,  KC_DEL,  _______,
                              _______, _______, _______, _______, _______, _______, _______, _______  
   ),
   [_FN] = LAYOUT(
