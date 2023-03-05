@@ -1,0 +1,33 @@
+{
+  "name": "PloopyCo Trackball Mini",
+  "vendorProductId": 1346576043,
+  "macros": [
+    "{KC_LCTL,KC_W}",
+    "{KC_LCTL,KC_PGUP}",
+    "{KC_LCTL,KC_PGDN}",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "layers": [
+    ["KC_MS_BTN1", "KC_MS_BTN3", "KC_MS_BTN2", "CUSTOM(1)", "MO(1)", "KC_ENT"],
+    ["KC_ENT", "MACRO00", "KC_NO", "MO(2)", "KC_TRNS", "KC_TRNS"],
+    ["MACRO01", "KC_NO", "MACRO02", "KC_NO", "KC_NO", "KC_TRNS"],
+    ["KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"],
+    ["KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"],
+    ["KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"],
+    ["KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_NO", "KC_NO"],
+    ["KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO"]
+  ],
+  "encoders": []
+}
