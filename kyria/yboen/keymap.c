@@ -2,6 +2,28 @@
 #include "keycodes.h"
 #include "my_encoder.h"
 
+#define CGL C(G(KC_LEFT))
+#define CGR C(G(KC_RIGHT))
+#define UND C(KC_Z)
+#define CPY C(KC_C)
+#define CUT C(KC_X)
+#define PST C(KC_V)
+#define K_A MT(MOD_LGUI, KC_A)
+#define K_S MT(MOD_LALT, KC_S)
+#define K_D MT(MOD_LCTL, KC_D)
+#define K_F MT(MOD_LSFT, KC_F)
+#define K_J MT(MOD_LSFT, KC_J)
+#define K_K MT(MOD_LCTL, KC_K)
+#define K_L MT(MOD_LALT, KC_L)
+#define K_SCLN MT(MOD_LGUI, KC_SCLN)
+#define MO_SYM MO(_SYM)
+#define MO_NAV MO(_NAV)
+#define MO_FN MO(_FN)
+#define K_SPC LT(_FN, KC_SPC)
+// kyria only
+#define K_ESC MT(MOD_LALT, KC_ESC)
+#define TO_NUM TO(_NUMPAD)
+
 #ifdef COMBO_ENABLE
 enum combo_events {
     MOUSE_MODE,
@@ -49,21 +71,22 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
-      MT(MOD_LALT, KC_ESC),KC_Q,   KC_W, KC_E,    KC_R,   KC_T,                                                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_CAPS,
-      KC_LCTL,             MT(MOD_LGUI, KC_A),   MT(MOD_LALT, KC_S), MT(MOD_LCTL, KC_D), MT(MOD_LSFT, KC_F), KC_G,                  KC_H, MT(MOD_RSFT, KC_J), MT(MOD_RCTL, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOT,
-      KC_LSHIFT,           KC_Z,   KC_X, KC_C,    KC_V,   KC_B, TO(_NUMPAD), KC_MEH,                        KC_DEL, KC_INS,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
-      ENC_MODE_L,          KC_LGUI, LT(_NAV, KC_ENT),    KC_SPC, LT(_FUNC, KC_HOME),                        LT(_SYM, KC_END), KC_BSPC, LT(_NAV, KC_ENT),  KC_TAB, ENC_MODE_R
+      K_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_CAPS,
+      KC_LCTL, K_A,     K_S,     K_D,     K_F,     KC_G,                                           KC_H,    K_J,     K_K,     K_L,     K_SCLN,  KC_QUOT,
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    TO_NUM,  KC_MEH,     KC_DEL,  KC_INS,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
+                                 ENC_L,   KC_LGUI, MO_SYM,  K_SPC,   KC_HOME,    KC_END,  KC_SPC,  MO_NAV,  KC_TAB,  ENC_R
+    //   ENC_MODE_L,  KC_LGUI, LT(_NAV, KC_ENT),    KC_SPC, LT(_FUNC, KC_HOME),         LT(_SYM, KC_END), KC_BSPC, LT(_NAV, KC_ENT),  KC_TAB, ENC_MODE_R
     ),
     [_SYM] = LAYOUT(
-      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, _______,                                        _______, _______, _______, _______, _______, _______,
-      _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,                                         KC_PLUS, KC_MINS, KC_ASTR, KC_PERC, KC_BSLS, _______,
-      _______, _______, KC_CIRC, KC_LBRC, KC_RBRC, _______, _______, _______,    _______, _______, KC_AMPR, KC_EQL, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______
+      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, XXXXXXX,                                        XXXXXXX, KC_TILD, KC_CIRC, XXXXXXX, KC_DQUO, _______,
+      _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,                                         KC_PLUS, KC_MINS, KC_ASTR, KC_PERC, KC_QUOT, _______,
+      _______, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, _______, _______,    _______, _______, KC_AMPR, KC_EQL,  KC_UNDS, KC_BSLS, KC_PIPE, _______,
+                                 _______, _______, _______, KC_ENT , _______,    _______, _______, _______, _______, _______
     ),
     [_NAV] = LAYOUT(
       _______, KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-      _______, TO(_QWERTY), KC_BTN3, KC_BTN2, KC_BTN1, KC_WH_U,                                                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_BTN2,
-      _______, KC_AUDIO_MUTE, KC_MPRV, KC_MPLY, KC_MNXT, KC_WH_D,    _______, _______,      _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, TO(_QWERTY), KC_BTN1,
+      _______, KC_CAPS, KC_HOME, KC_END,  KC_PGUP, XXXXXXX,                                                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_BTN2,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_PGDN, KC_LSFT,    _______, _______,      _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, TO(_QWERTY), KC_BTN1,
                                           _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(

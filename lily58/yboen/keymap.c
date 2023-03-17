@@ -75,7 +75,7 @@ enum combo_events {
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
-const uint16_t PROGMEM pem_email_combo[] = {KC_E, KC_R, KC_M, COMBO_END};
+const uint16_t PROGMEM pem_email_combo[] = {KC_E, KC_R, KC_M, COMBO_END};                                           
 const uint16_t PROGMEM wem_email_combo[] = {KC_W, KC_E, KC_M, COMBO_END};
 const uint16_t PROGMEM df_gaming_combo[] = {KC_W, KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM df_qwerty_combo[] = {KC_Q, KC_W, KC_E, COMBO_END};

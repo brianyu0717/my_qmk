@@ -10,6 +10,6 @@ enum layers {
 };
 
 enum custom_keycodes {
-    ENC_MODE_L = SAFE_RANGE,
-    ENC_MODE_R,
+    ENC_L = SAFE_RANGE,
+    ENC_R,
 };
