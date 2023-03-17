@@ -18,6 +18,8 @@
 #define MO_NAV MO(_NAV)
 #define MO_FN MO(_FN)
 #define K_SPC LT(_FN, KC_SPC)
+#define IJ_NXT C(A(KC_RBRC))
+#define IJ_PRV C(A(KC_LBRC))
 
 enum layer_number {
   _QWERTY = 0,
@@ -31,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,
     K_A,     K_S,     K_D,     K_F,     KC_G,            KC_H,    K_J,   K_K,     K_L,     K_SCLN,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_SLSH,
-                              MO_SYM,  K_SPC,           KC_SPC,  MO_NAV
+                               KC_ENT,  K_SPC,           MO_SYM,  MO_NAV
   ),
-  [_SYM] = LAYOUT( 
+  [_SYM] = LAYOUT(
     KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, XXXXXXX,         XXXXXXX, KC_TILD, KC_CIRC, XXXXXXX, KC_DQUO,
     KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV ,         KC_PLUS, KC_MINS, KC_ASTR, KC_PERC, KC_QUOT,
     XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX,         KC_AMPR, KC_EQL,  KC_UNDS, KC_BSLS, KC_PIPE,
@@ -43,13 +45,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_1, 	 KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,    KC_0, 
     KC_CAPS, KC_HOME, KC_END,  KC_PGUP, XXXXXXX,         KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
     KC_LGUI, KC_LALT, KC_LCTL, KC_PGDN, KC_LSFT,         XXXXXXX, KC_ESC,  KC_TAB,  KC_INS,  KC_DEL,
-                               _______, KC_ENT ,         _______, _______
+                               _______, KC_SPC,          _______, _______
   ),
   [_FN] = LAYOUT( 
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    XXXXXXX, XXXXXXX, CGL,     CGR,     KC_VOLU,         XXXXXXX, XXXXXXX, KC_MUTE, KC_F11,  KC_F12,
-    UND,     CUT,     CPY,     PST,     KC_VOLD,         XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT,
-                               _______, _______,         _______, _______
+    IJ_NXT,  IJ_PRV,  CGL,     CGR,     KC_VOLU,         XXXXXXX, XXXXXXX, XXXXXXX, KC_F11,  KC_F12,
+    UND,     CUT,     CPY,     PST,     KC_VOLD,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                               KC_MUTE, _______,         _______, _______
   )
 };
 
