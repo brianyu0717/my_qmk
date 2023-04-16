@@ -9,4 +9,4 @@ COMMAND=flash
 else
 COMMAND=compile
 fi
-qmk $COMMAND -kb splitkb/kyria/rev1 -km yboen
+qmk $COMMAND -kb splitkb/kyria/rev1 -km yboen -bl avrdude

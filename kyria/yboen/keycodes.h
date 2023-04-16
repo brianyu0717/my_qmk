@@ -4,9 +4,9 @@ enum layers {
     _QWERTY = 0,
     _SYM,
     _NAV,
-    _FUNC,
-    _NUMPAD,
+    _FN,
     _RGB,
+    _GAM,
 };
 
 enum custom_keycodes {

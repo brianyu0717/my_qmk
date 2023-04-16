@@ -6,6 +6,7 @@
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X64
   #define OLED_TIMEOUT 10000
+  #define OLED_SCROLL_TIMEOUT 1000
 #endif
 
 #ifdef RGBLIGHT_ENABLE
@@ -17,9 +18,6 @@
 #endif
 
 #define RGBLIGHT_LAYERS
-
-//deprecated features disabled to save space
-#define NO_ACTION_FUNCTION
 
 //current features disabled to save space
 #define DISABLE_LEADER
