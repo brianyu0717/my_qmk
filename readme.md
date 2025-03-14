@@ -21,3 +21,12 @@ that keymap so it'll be ready for flashing.
 ### Kyria
 
 No rsync is available and there's some left overs from merge conflict resolution that needs fixing. Fix those first, then create the rsync script similar to the lily58 one.
+
+## Installing and running `qmk`
+
+Usually [the docs](https://docs.qmk.fm/newbs_getting_started) works but as of Mar 2025 I found `pipx` is required:
+
+* Install `pipx` using `apt`
+* Install `qmk` via `pipx`: `python3 -m pipx install qmk`
+* Setup `qmk`: `pipx run qmk setup`
+* Run `qmk` with `pipx`: `pipx run qmk [...]`
