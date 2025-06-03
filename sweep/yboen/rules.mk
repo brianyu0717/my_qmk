@@ -1,5 +1,6 @@
 COMBO_ENABLE       = yes   # Combos / Key chords
 EXTRAKEY_ENABLE    = yes   # Audio control and System control
+CAPS_WORD_ENABLE   = yes   # Caps Word: https://docs.qmk.fm/features/caps_word
 
 # disabled stuff
 AUDIO_ENABLE       = no    # Audio output
