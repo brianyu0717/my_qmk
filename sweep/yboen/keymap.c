@@ -17,8 +17,7 @@
 #define K_COMM MT(MOD_LCTL, KC_COMM)
 #define K_DOT MT(MOD_LALT, KC_DOT)
 #define K_SLSH MT(MOD_LGUI, KC_SLSH)
-#define IJ_NXT C(A(KC_RBRC))
-#define IJ_PRV C(A(KC_LBRC))
+#define CTRL_W C(KC_W)
 
 enum layer_number {
   _QWERTY = 0,
@@ -48,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_FN] = LAYOUT( 
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    IJ_NXT,  IJ_PRV,  CGL,     CGR,     KC_VOLU,         _______, _______, _______, KC_F11,  KC_F12,
+    CTRL_W,  _______, CGL,     CGR,     KC_VOLU,         _______, _______, _______, KC_F11,  KC_F12,
     UND,     CUT,     CPY,     PST,     KC_VOLD,         _______, _______, _______, _______, _______,
                                KC_MUTE, _______,         _______, _______
   )
@@ -67,8 +66,8 @@ enum combo_events {
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
-const uint16_t PROGMEM pem_email_combo[] = {KC_E, KC_R, KC_M, COMBO_END};
-const uint16_t PROGMEM wem_email_combo[] = {KC_W, KC_E, KC_M, COMBO_END};
+const uint16_t PROGMEM pem_email_combo[] = {KC_E, KC_R, KC_U, COMBO_END};
+const uint16_t PROGMEM wem_email_combo[] = {KC_W, KC_E, KC_U, COMBO_END};
 combo_t key_combos[] = {
     [PEM_EMAIL] = COMBO_ACTION(pem_email_combo),
     [WEM_EMAIL] = COMBO_ACTION(wem_email_combo)
